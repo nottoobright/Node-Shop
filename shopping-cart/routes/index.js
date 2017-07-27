@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router(),
     Product = require('../models/products'),
     passport = require('passport'),
-    csrf = require('csurf');
+    csrf = require('csurf'),
+    Cart = require('../models/cart');
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
@@ -19,6 +20,22 @@ router.get('/', function(req, res, next) {
     });
 
 });
+
+router.get('/add-to-cart/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        console.log(req.session.cart);
+        res.redirect('/');
+    });
+});
+
 
 router.get('/profile', isLoggedIn, function(req, res, next) {
     res.render('user/profile');
