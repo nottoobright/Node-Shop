@@ -1,87 +1,20 @@
+{{# each products }}
 <div class="row">
+	{{# each this}}
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img class="img-responsive" src="http://gamepreorders.com/wp-content/uploads/2016/03/overwatch-cover.jpg" alt="...">
+      <img class="img-responsive" src="{{this.imagePath}}" alt="...">
       <div class="caption">
-        <h3>Overwatch</h3>
-        <p class="description">In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: Overwatch. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
+        <h3>{{this.title}}</h3>
+        <p class="description">{{this.description}}</p>
         <div class="clearfix">
-            <div class="price pull-left">$39.99</div>
+            <div class="price pull-left">${{this.price}}</div>
             <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
         </div>
         </div>
     </div>
   </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img class="img-responsive" src="http://gamepreorders.com/wp-content/uploads/2016/03/overwatch-cover.jpg" alt="...">
-      <div class="caption">
-        <h3>Overwatch</h3>
-        <p class="description">In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: Overwatch. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
-        <div class="clearfix">
-            <div class="price pull-left">$39.99</div>
-            <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
-        </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img class="img-responsive" src="http://gamepreorders.com/wp-content/uploads/2016/03/overwatch-cover.jpg" alt="...">
-      <div class="caption">
-        <h3>Overwatch</h3>
-        <p class="description">In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: Overwatch. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
-        <div class="clearfix">
-            <div class="price pull-left">$39.99</div>
-            <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
-        </div>
-        </div>
-    </div>
-  </div>
+  {{/each}}
 </div>
+{{/each}}
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img class="img-responsive" src="http://gamepreorders.com/wp-content/uploads/2016/03/overwatch-cover.jpg" alt="...">
-      <div class="caption">
-        <h3>Overwatch</h3>
-        <p class="description">In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: Overwatch. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
-        <div class="clearfix">
-            <div class="price pull-left">$39.99</div>
-            <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
-        </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img class="img-responsive" src="http://gamepreorders.com/wp-content/uploads/2016/03/overwatch-cover.jpg" alt="...">
-      <div class="caption">
-        <h3>Overwatch</h3>
-        <p class="description">In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: Overwatch. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
-        <div class="clearfix">
-            <div class="price pull-left">$39.99</div>
-            <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
-        </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img class="img-responsive" src="http://gamepreorders.com/wp-content/uploads/2016/03/overwatch-cover.jpg" alt="...">
-      <div class="caption">
-        <h3>Overwatch</h3>
-        <p class="description">In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: Overwatch. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
-        <div class="clearfix">
-            <div class="price pull-left">$39.99</div>
-            <a href="#" class="btn btn-success pull-right" role="button">Buy</a>
-        </div>
-        </div>
-    </div>
-  </div>
-</div>
