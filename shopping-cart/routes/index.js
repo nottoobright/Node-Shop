@@ -20,8 +20,14 @@ router.get('/', function(req, res, next) {
 
 });
 
-router.get('/user/signup', function(req, res, next) {
-    res.render('user/signup', { csrfToken: req.csrfToken() });
+router.get('/signup', function(req, res, next) {
+    var messages = req.flash('error');
+    res.render('user/signup', { csrfToken: req.csrfToken(), messages: messages, hasError: messages.length > 0 });
+});
+
+router.get('/signin', function(req, res, next) {
+    var messages = req.flash('error');
+    res.render('user/signin', { csrfToken: req.csrfToken(), messages: messages, hasError: messages.length > 0 });
 });
 
 router.get('/profile', function(req, res, next) {
@@ -29,9 +35,17 @@ router.get('/profile', function(req, res, next) {
 });
 
 
-router.post('/user/signup', passport.authenticate('local-signup', {
+
+
+router.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/profile',
     failureRedirect: '/signup',
+    failureFlash: true
+}));
+
+router.post('/signin', passport.authenticate('local-signin', {
+    successRedirect: '/profile',
+    failureRedirect: '/signin',
     failureFlash: true
 }));
 
